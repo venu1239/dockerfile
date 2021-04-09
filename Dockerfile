@@ -1,7 +1,6 @@
-FROM nginx
+FROM ubuntu
 RUN apt update
 RUN apt install apache2 -y
-ADD . /usr/local/etc/nginx
-CMD ["nginx", "-g","daemon off"]
+ADD . /var/www/html
 ENTRYPOINT apachectl -D FOREGROUND
 ENV name venu DEVOPS
